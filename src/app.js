@@ -1,15 +1,8 @@
 import { render } from '../node_modules/lit-html/lit-html.js';
-import { clockTemplate, dateTemplate } from './template.js'
+import { clockTemplate } from './template.js'
 
 const main = document.body;
 let [day, month, year] = new Date().toLocaleDateString('en-UK').split('/');
-let [hour, minute, second] = new Date().toLocaleTimeString("en-UK").split(/:| /);
-
-if (hour === '00' && minute === '00' && second === '00') {
-    console.log(hour, minute, second);
-    render(dateTemplate(day, month, year), main);
-    console.log(hour, minute, second);
-}
 
 
 const digits = [];
@@ -26,8 +19,7 @@ function setWatchFace() {
 
 setWatchFace();
 
-render(clockTemplate(digits, day, month, year), main);
-
+setInterval(render(clockTemplate(digits, day, month, year), main), 1000)
 setInterval(setClock, 1000);
 
 const hourHand = document.querySelector('.hand.hour');

@@ -1,9 +1,9 @@
 import { html } from '../node_modules/lit-html/lit-html.js';
 
 
-const clockFaceTemplate = (digits) => html`
-    ${digits.map(digit => html`<div class="number number${`${digit}`}">🔘</div>`)}`;
-
+const clockFaceTemplate = (testdigits) => html`
+    ${testdigits.map(digit => html`<div class="number number${`${digit}`}">🔘</div>`)}`;
+        
 const clockHandsTemplate = () => html`
 <div class="hand hour"></div>
 <div class="hand minute"></div>
@@ -17,17 +17,18 @@ const dateTemplate = (day, month, year) => html`
 </div>`;
 
 
-const clockTemplate = (digits, day, month, year) => html`
+const clockTemplate = (testdigits, day, month, year) => html`
 <div id="clock">
     <section id="clockHands">
         ${clockHandsTemplate()}
     </section>
     <section id="clockFace">
-        ${clockFaceTemplate(digits)}
+        ${clockFaceTemplate(testdigits)}
     </section>
     <section id="date">
         ${dateTemplate(day, month, year)}
     </section>
 </div>`;
 
-export { clockTemplate, dateTemplate }
+
+export { clockTemplate }

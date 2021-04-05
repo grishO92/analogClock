@@ -5,9 +5,8 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     min-height: 100vh;
     overflow: visible;
     background: radial-gradient( rgb(41, 41, 41), rgb(0, 0, 0));
@@ -31,6 +30,22 @@ body {
     text-align: center;
     font-size: 1rem;
     transform: rotate(var(--rotation));
+}
+
+.number1201 {
+    --rotation: 6deg;
+}
+
+.number1202 {
+    --rotation: 12deg;
+}
+
+.number1203 {
+    --rotation: 18deg;
+}
+
+.number1204 {
+    --rotation: 24deg;
 }
 
 .number1 {
@@ -269,22 +284,6 @@ body {
     --rotation: 360deg;
 }
 
-.number1201 {
-    --rotation: 6deg;
-}
-
-.number1202 {
-    --rotation: 12deg;
-}
-
-.number1203 {
-    --rotation: 18deg;
-}
-
-.number1204 {
-    --rotation: 24deg;
-}
-
 .hand {
     --rotation: 0;
     position: absolute;
@@ -314,7 +313,7 @@ body {
 
 .hand.second {
     width: 6px;
-    height: 47%;
+    height: 48%;
     z-index: 12;
     background-color: rgba(255, 75, 75);
     border: 1px solid rgb(0, 0, 0, 0.3);
